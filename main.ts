@@ -1,14 +1,14 @@
+// The Robot Apology — redo entry (robot-apology-20261125)
+// Writes the two-line apology to /output/entry.txt only.
+// Line 1: the mix-up (cat's salmon pâté in the Tuesday lunch).
+// Line 2: the fix (check the shelf and the little cat face first).
 import { mkdirSync, writeFileSync } from "node:fs";
 
-// The Robot Apology — a two-line robot confession.
-// Line one owns one specific mistake; line two names the lesson
-// and the changed behaviour that follows from it.
-const OUT_PATH = "/output/entry.txt";
-
-const entry = [
-  "Sorry, I printed all 400 pages of the thread because you said 'print it out'.",
-  "Now I ask which pages before I press print.",
-].join("\n") + "\n";
-
 mkdirSync("/output", { recursive: true });
-writeFileSync(OUT_PATH, entry, "utf8");
+
+const lines = [
+  "I packed the cat's salmon pâté in your Tuesday lunch because both tins said 'salmon' on the lid.",
+  "Now I check the shelf and the little cat face before any tin goes into your lunch bag.",
+];
+
+writeFileSync("/output/entry.txt", lines.join("\n"));
